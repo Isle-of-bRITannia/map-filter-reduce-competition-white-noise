@@ -41,12 +41,6 @@ const monsters: Monster[] = botwMonsters;
 const materials: Material[] = botwData.data.materials;
 
 
-// Create a data structure of all monster spawn locations
-// Attach to each location all the monster objects that spawn there, but without those Monsters' 'common.locations' and 'id' properties
-
-// Monsters assigned to a location can't be a monster type while missing properties
-// So, monsters could be rebuilt from the ground up 1 property at a time when being assigned
-
 const locations: any = {};
 
 for (let i = 0; i < monsters.length; i++) {
@@ -69,7 +63,7 @@ for (let key of locations.keys()) {
 
 
 
-                key.push(monster_to_push);
+                locations[key].push(monster_to_push);
 
 
             }
